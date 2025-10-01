@@ -74,11 +74,11 @@
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(120deg, rgb(31, 31, 31) 40%, rgb(50, 50, 50) 50%, rgb(39, 39, 39) 60%, rgb(31, 31, 31) , rgb(31, 31, 31) 100%, transparent);
+    background: linear-gradient(120deg, rgb(62, 62, 62) 40%, rgb(50, 50, 50) 50%, rgb(105, 105, 105) 60%, rgb(61, 61, 61) , rgb(50, 50, 50) 100%, transparent);
     box-shadow: 5px 5px 20px black;
     background-size: 200% 100%;
     background-position: 200% 0;
-    animation: shiny 5s linear infinite;
+
     padding: 0 20px 0 20px;
     border-radius: 20px;
     margin: 0 20px 0 20px;
