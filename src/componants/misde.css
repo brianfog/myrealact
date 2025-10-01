@@ -1,0 +1,15 @@
+.Midse {
+    height: max-content;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    grid-template-areas:
+    'tside main'
+    'bside main'
+    ;
+}
+
+
+

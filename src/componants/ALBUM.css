@@ -1,0 +1,146 @@
+.user-sec {
+    display: flex;
+    flex: 1;
+    margin-right: 20px;
+    border-radius: 20px;
+    height: 200px;
+    background: linear-gradient(120deg, black 40%, rgb(50, 50, 50) 50%, black 60%, black 100%, transparent);
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    animation: shiny 5s linear infinite;
+}
+
+@keyframes shiny {
+    to {
+        background-position: -200%;
+    }
+}
+
+.user-pf {
+    width: 430px;
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    height: 200px;
+    background: linear-gradient(120deg, rgb(31, 31, 31) 40%, rgb(50, 50, 50) 50%, rgb(39, 39, 39) 60%, rgb(31, 31, 31) , rgb(31, 31, 31) 100%, transparent);
+    box-shadow: 5px 5px 20px black;
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    animation: shiny 5s linear infinite;
+}
+
+.user-pf img {
+    position: absolute;
+    left: 50px;
+    top: 30px;
+    height: 150px;
+    width: 150px;
+    border-radius: 80px;
+    background-color: gray;
+}
+
+.user-option {
+    height: 100%;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 20px;
+}
+
+.user-option button {
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    height: 50px;
+    width: 180px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+}
+
+.wholeslide {
+    display: flex;
+    flex: 1;
+    flex-shrink: 1;
+    max-width: 700px;
+    min-width: 0px;
+    height: 200px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, rgb(31, 31, 31) 40%, rgb(50, 50, 50) 50%, rgb(39, 39, 39) 60%, rgb(31, 31, 31) , rgb(31, 31, 31) 100%, transparent);
+    box-shadow: 5px 5px 20px black;
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    animation: shiny 5s linear infinite;
+    padding: 0 20px 0 20px;
+    border-radius: 20px;
+    margin: 0 20px 0 20px;
+}
+
+.slide {
+    display: flex;
+    overflow: hidden;
+    min-width: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sitem {
+    background: gray;
+    flex-shrink: 0;
+    height: 160px;
+    width: 120px;
+    margin: 0 20px 0 20px;
+    border-radius: 10px;
+}
+
+.albomwhole {
+    margin-top: 20px;
+    display: flex;
+    height: max-content;
+    flex: 1;
+    max-width: 98%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.albom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
+    height: 200px;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.one {
+    border-radius: 5px;
+    grid-area: 1/ 1/ 4/ 2;
+    background-color: gray;
+}
+
+.two {
+    border-radius: 5px;
+    grid-area: 4/1/6/2;
+    background-color: gray;
+}
+
+.three {
+    border-radius: 5px;
+    grid-area: 1/2/3/3;
+    background-color: gray;
+}
+
+.four {
+    border-radius: 5px;
+    grid-area: 3/2/6/3;
+    background-color: gray;
+}

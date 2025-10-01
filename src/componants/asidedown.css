@@ -1,0 +1,22 @@
+.bottomsider {
+    grid-area: bside;
+}
+
+
+.downside {
+    background: linear-gradient(120deg,rgb(34, 34, 34),rgb(46, 46, 46),rgb(42, 42, 42),rgb(73, 73, 73), transparent);
+    box-shadow: 1px 1px 20px black;
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    min-height: 200px;
+    width: 400px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 90px;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+}

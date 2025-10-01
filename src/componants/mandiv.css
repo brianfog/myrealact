@@ -1,0 +1,12 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-top: 20px;
+    height: max-content;
+    width:100%;
+    vertical-align: top;
+    grid-area: main;
+}
+
