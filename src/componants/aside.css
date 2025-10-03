@@ -22,7 +22,7 @@ aside{
     justify-content: start;
     align-items: center;
     padding-top: 90px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 .title-div {
@@ -58,9 +58,11 @@ aside{
 .side button {
     height: 60px;
     width: 315px;
-    background-color: black;
+    background-color: gray;
+    box-shadow: 5px 5px 10px black;
+    border: none;
     border-radius: 10px;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 20px;
     cursor: pointer;
 }
