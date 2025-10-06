@@ -8,7 +8,7 @@ aside{
 
 
 .side {
-    background: linear-gradient(120deg,rgb(53, 53, 53),rgb(75, 75, 75),rgb(35, 35, 35),rgb(42, 42, 42), transparent);
+    background:black;
     box-shadow: 5px 5px 20px black;
     background-size: 200% 100%;
     background-position: 200% 0;
