@@ -25,10 +25,10 @@
     justify-content: flex-end;
     align-items: center;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 10px;
     height: 200px;
-    background: linear-gradient(120deg, rgb(31, 31, 31) 40%, rgb(50, 50, 50) 50%, rgb(39, 39, 39) 60%, rgb(31, 31, 31) , rgb(31, 31, 31) 100%, transparent);
-    box-shadow: 5px 5px 20px black;
+    background: linear-gradient( 120deg, white );
+    box-shadow: 0px 1px 20px black;
     background-size: 200% 100%;
     background-position: 200% 0;
     animation: shiny 5s linear infinite;
@@ -42,6 +42,7 @@
     width: 150px;
     border-radius: 80px;
     background-color: gray;
+    border: 2px solid black;
 }
 
 .user-option {
@@ -55,9 +56,9 @@
 }
 
 .user-option button {
-    background-color: gray;
+    background-color: rgb(40, 40, 40);
     border: 0;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 18px;
     height: 50px;
     width: 180px;
@@ -78,13 +79,13 @@
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(120deg, rgb(62, 62, 62) 40%, rgb(50, 50, 50) 50%, rgb(105, 105, 105) 60%, rgb(61, 61, 61) , rgb(50, 50, 50) 100%, transparent);
-    box-shadow: 5px 5px 20px black;
+    background: white;
+    box-shadow: 0 1px 10px black;
     background-size: 200% 100%;
     background-position: 200% 0;
 
     padding: 0 20px 0 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 0 20px 0 20px;
 }
 

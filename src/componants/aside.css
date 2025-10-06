@@ -8,14 +8,14 @@ aside{
 
 
 .side {
-    background:black;
-    box-shadow: 5px 5px 20px black;
+    background:rgb(255, 255, 255);
+    box-shadow: 0px 1px 10px black;
     background-size: 200% 100%;
     background-position: 200% 0;
    
     min-height: 200px;
     width: 400px;
-    border-radius: 20px;
+    border-radius: 10px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -58,11 +58,11 @@ aside{
 .side button {
     height: 60px;
     width: 315px;
-    background-color: gray;
-    box-shadow: 5px 5px 10px black;
+    background-color: rgb(40, 40, 40);
+    box-shadow: 0px 5px 10px black;
     border: none;
     border-radius: 10px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 20px;
     cursor: pointer;
 }
