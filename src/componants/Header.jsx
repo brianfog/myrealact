@@ -27,7 +27,7 @@ function Header() {
         <header>
             <div className="nav">
                 <div className="logo">
-                    <a href="#">NETWORK</a>
+                    <a href="#">MOVIE.LAND</a>
                 </div>
                 <div className="search-sec">
                     <div className="search-box">

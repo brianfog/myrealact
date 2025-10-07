@@ -8,7 +8,7 @@ aside{
 
 
 .side {
-    background:rgb(255, 255, 255);
+    background:rgb(235, 235, 235);
     box-shadow: 0px 1px 10px black;
     background-size: 200% 100%;
     background-position: 200% 0;
@@ -33,11 +33,14 @@ aside{
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid black;
+    height: 65px;
 }
 
 .title {
-    color: white;
-    font-size: 25px;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
 }
 
 .movie-grid {
