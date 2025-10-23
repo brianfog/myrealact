@@ -11,5 +11,17 @@
     ;
 }
 
+@media  screen and (max-width : 900px) {
+    .Midse {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+        'tside'
+        'main'
+        'bside'
+        ;
+        row-gap: 3px;
+    }
+}
 
 

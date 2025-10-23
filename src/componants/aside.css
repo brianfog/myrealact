@@ -1,4 +1,4 @@
-aside{
+aside {
     flex-direction: column;
     margin-top: 20px;
     width: 400px;
@@ -8,11 +8,11 @@ aside{
 
 
 .side {
-    background:rgb(235, 235, 235);
+    background: rgb(235, 235, 235);
     box-shadow: 0px 1px 10px black;
     background-size: 200% 100%;
     background-position: 200% 0;
-   
+
     min-height: 200px;
     width: 400px;
     border-radius: 10px;
@@ -45,8 +45,8 @@ aside{
 
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(4 , 1fr);
-    grid-template-rows: repeat(2 , 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 5px;
     margin-bottom: 30px;
 }
@@ -70,3 +70,32 @@ aside{
     cursor: pointer;
 }
 
+@media screen and (max-width : 900px) {
+    aside {
+        width: 100%;
+    }
+
+    .side {
+        width: 100%;
+        height: max-content;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 1fr;
+    }
+}
+
+@media screen and (max-width : 718px) {
+    .movie-grid {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width : 576px) {
+    .movie-grid {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}

@@ -149,3 +149,42 @@
     grid-area: 3/2/6/3;
     background-color: gray;
 }
+
+
+@media screen and (max-width : 896px) {
+    .wholeslide {
+        display: none;
+    }
+
+    .user-pf {
+        min-width: 440px;
+        flex: 1;
+    }
+
+    .albom {
+        margin-left: 20px;
+    }
+
+    .user-option {
+        position: relative;
+        width: 400px;
+        margin-left: 300px;
+    }
+
+    .user-option button {
+        width: 100%;
+        max-width: 300px;
+        min-width: 180px;
+    }
+}
+
+@media screen and (max-width : 710px) {
+    .albom {
+        display: none;
+        margin-left: 0;
+    }
+
+    .user-pf {
+        margin-right: 0;
+    }
+}
