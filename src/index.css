@@ -3,7 +3,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   margin: 8px 20px 0px 20px;
-  min-width: 476px;
+  min-width: 430px;
 }
 
 @media (max-width: 476px) {
