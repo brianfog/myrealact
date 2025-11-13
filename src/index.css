@@ -3,4 +3,9 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   margin: 8px 20px 0px 20px;
+  min-width: 476px;
+}
+
+@media (max-width: 476px) {
+  
 }

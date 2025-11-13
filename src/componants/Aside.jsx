@@ -6,7 +6,7 @@ function ASIDE() {
         <aside>
             <div className="side">
                 <div className="title-div">
-                    <h1 className="title">newest movies</h1>
+                    <h1 className="title">New Addition</h1>
                 </div>
                 <div className="movie-grid">
                     <img src="" />

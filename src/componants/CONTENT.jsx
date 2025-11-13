@@ -1,12 +1,95 @@
-/* eslint-disable no-undef */
-import "./content.css"
 
-function Content({movi}) {
+import "./content.css"
+import like from "../assets/heart-icon(2).svg"
+import unlike from "../assets/heart-line-icon(1).svg"
+import { useContext, useEffect, useRef, useState } from "react"
+import api from "../axe"
+import { userglobal } from "../userinfo"
+
+function Content({ movi }) {
+
+    const likebtn = useRef()
+    const unlikebtn = useRef()
+    const { user , setfav} = useContext(userglobal)
+    const [pushed , setpush] = useState(false)
+
+
+    
+    /*
+        this is a comment
+        it's supposed to be a filler
+        so i can read my code easier
+        better to clean your code
+        than getting a headache
+    */
+
+
+
+    async function handlelike() {
+        if (user) {
+            setpush(!pushed);
+
+            await api.post("/likeadd", {
+                "useremail": user.email,
+                "movie_id": movi.NAME,
+                "liked": pushed,
+                "movie_pic": movi.IMGADD
+            })
+            .then(res => {if (res) {setfav(res.data.favorites)}})
+            
+        }
+    }
+
+
+
+    
+    /*
+        this is a comment
+        it's supposed to be a filler
+        so i can read my code easier
+        better to clean your code
+        than getting a headache
+    */
+
+
+
+    useEffect(() => {
+
+    
+
+
+        if (pushed) {
+                likebtn.current.style.display = `none`;
+                unlikebtn.current.style.display = `flex`;
+            } else {
+                likebtn.current.style.display = `flex`;
+                unlikebtn.current.style.display = `none`;
+            }
+
+       
+
+
+    },[pushed])
+
+
+    
+    /*
+        this is a comment
+        it's supposed to be a filler
+        so i can read my code easier
+        better to clean your code
+        than getting a headache
+    */
+
 
     return (
         <div className="content">
             <div className="c-title">
                 <h1>{movi.NAME}</h1>
+                <button className="like-icon" onClick={handlelike}>
+                    <img src={like} ref={likebtn} alt="like" />
+                    <img src={unlike} ref={unlikebtn} />
+                </button>
             </div>
             <div className="main-content">
                 <div className="genre">

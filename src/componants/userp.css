@@ -1,0 +1,147 @@
+.userpage {
+    position: fixed;
+    background: rgba(66, 66, 66, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    display: none;
+    margin: -8px 0 0 -20px;
+    justify-content: center;
+    align-items: center;
+    top: 8px;
+    transition: 1s ease;
+}
+
+.useppan {
+    background-color: white;
+    height: 500px;
+    width: 600px;
+    position: relative;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 2px solid rgb(198, 198, 198);
+}
+
+.use-right {
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.realprof {
+    width: 100%;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+.realprof img {
+    height: 230px;
+    width: 230px;
+    border-radius: 115px;
+    background: rgb(93, 93, 93);
+}
+
+.NAMail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.NAMail p {
+    margin-top: -10px;
+}
+
+.signout {
+    background: rgb(40, 40, 40);
+    border-radius: 10px;
+    height: 60px;
+    width: 255px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+}
+
+
+.use-left{
+    height: 400px;
+    width: 280px;
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding: 6px;
+    overflow:scroll;
+}
+
+.aft{
+    left: 20px;
+    top: 60px;
+    position: absolute;
+    width: 275px;
+    height: 50px;
+    background: linear-gradient(0deg , rgba(1,1,1,0), white 50%);
+}
+
+.befo{
+
+}
+
+.fav {
+    color: white;
+    position: absolute;
+    top: -22px;
+    left: 45px;
+    background: linear-gradient(120deg,blue, blueviolet);
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px 0 10px;
+    border-radius: 0 0 25px 20px;
+
+}
+
+.liksec {
+    margin-top: 50px;
+    height: max-content;
+    width: 250px;
+    display: grid;
+    grid-template-columns: repeat(2, 120px);
+    grid-template-rows: repeat(auto, auto);
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.liked {
+    height: 160px;
+    width: 120px;
+    position: relative;
+    box-shadow: 0 1px 10px black;
+}
+
+.liked img {
+    height: 160px;
+    width: 120px;
+    border-radius: 2px;
+}
+
+@media (max-width: 476px) {
+  
+}

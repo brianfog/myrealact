@@ -67,7 +67,15 @@
     border-radius: 8px;
     box-shadow: 0 5px 10px rgb(0, 0, 0);
     cursor: pointer;
+    transition: 0.1s ease;
 }
+
+.user-option button:hover {
+    background-color: white;
+    border: 3px solid rgb(40, 40, 40);
+    color: rgb(40, 40, 40);
+}
+
 
 .wholeslide {
     display: flex;
@@ -83,15 +91,35 @@
     box-shadow: 0 1px 10px black;
     background-size: 200% 100%;
     background-position: 200% 0;
-
     padding: 0 20px 0 20px;
     border-radius: 10px;
     margin: 0 20px 0 20px;
+    position: relative;
+}
+
+.wholeslide::before {
+    content: '';
+    position: absolute;
+    height: 200px;
+    width: 50px;
+    background: linear-gradient(to right, white 0% , rgba(1,1,1,0));
+    z-index: 3;
+    left: 0;
+}
+
+.wholeslide::after {
+    content: '';
+    position: absolute;
+    height: 200px;
+    width: 50px;
+    background: linear-gradient(to right, rgba(1,1,1,0), white 100%);
+    z-index: 3;
+    right: 0;
 }
 
 .slide {
     display: flex;
-    overflow: hidden;
+    width: max-content;
     min-width: 0px;
     justify-content: center;
     align-items: center;
@@ -187,4 +215,8 @@
     .user-pf {
         margin-right: 0;
     }
+}
+
+@media (max-width: 476px) {
+  
 }

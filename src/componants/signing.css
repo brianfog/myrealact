@@ -1,0 +1,209 @@
+.signpage {
+    position: fixed;
+    display: flex;
+    background: rgba(66, 66, 66, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    display: none;
+    margin: -8px 0 0 -20px;
+    justify-content: center;
+    align-items: center;
+    top: 8px;
+    transition: 1s ease;
+}
+
+.signdiv {
+    background-color: white;
+    height: 500px;
+    width: 800px;
+    position: relative;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.signin {
+    width: 400px;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+
+.signup form {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupdiv {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.signindiv {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.signup label {
+    margin-left: -5px;
+    margin-bottom: 2px;
+}
+
+.signin label {
+    margin-left: -5px;
+    margin-bottom: 2px;
+}
+
+.signup input {
+    width: 200px;
+    height: 40px;
+    margin: 5px 0 20px 0;
+    border: none;
+    background: rgb(44, 44, 44);
+    color: white;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+.signin input {
+    width: 200px;
+    height: 40px;
+    margin: 5px 0 20px 0;
+    border: none;
+    background: rgb(44, 44, 44);
+    color: white;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+.signin button {
+    display: flex;
+    height: 50px;
+    width: 180px;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 0 5px 0;
+    margin-top: 25px;
+    margin-left: 9px;
+    cursor: pointer;
+    box-shadow: 1px 0 10px black;
+}
+
+.signup button {
+    display: flex;
+    height: 50px;
+    width: 180px;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 0 5px 0;
+    margin-top: 25px;
+    margin-left: 9px;
+    cursor: pointer;
+    box-shadow: 1px 0 10px black;
+}
+
+
+.rosi {
+    position: absolute;
+    height: 100%;
+    width: 400px;
+    background : linear-gradient(blue , violet);
+    border-radius: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    left: 0;
+    transition: 0.3s ease-out;
+}
+
+
+
+.rosi button {
+
+    transform: translateX(95px);
+    background-color: rgb(44, 44, 44);
+    border: none;
+    height: 80px;
+    width: 210px;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 1px 0 10px black;
+}
+
+.close {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.close:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease;
+}
+
+.close span {
+    height: 10px;
+    width: 70px;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.close span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 7.5px);
+}
+
+.close span:nth-child(2) {
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 476px) {
+  
+}

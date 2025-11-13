@@ -16,7 +16,7 @@
 
 .c-title {
     position: absolute;
-    top: 10px;
+    top: 5px;
     height: 65px;
     border-bottom: 1px solid black;
     width: 100%;
@@ -27,6 +27,28 @@
     color: rgb(0, 0, 0);
     font-size: 30px;
     margin-left: 40px;
+}
+
+.like-icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 30px;
+    top: 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+.like-icon img{
+    height: 40px;
+    width: 40px;
+}
+
+.like-icon img:nth-child(1){
+    display: none;
 }
 
 .main-content {
@@ -108,8 +130,14 @@
     color: rgb(255, 255, 255);
     box-shadow: 0px 1px 10px black;
     cursor: pointer;
+    transition: 0.1s ease;
 }
 
+.main-content button:hover{
+    background-color: white;
+    color: rgb(40, 40, 40);
+    border: 3px solid rgb(40, 40, 40);
+}
 
 @media screen and (max-width : 1060px) {
     .content {
@@ -159,4 +187,8 @@
         width: 100%;
         margin-top: 10px;
     }
+}
+
+@media (max-width: 476px) {
+  
 }
