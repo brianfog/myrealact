@@ -8,7 +8,7 @@ header {
   align-items: center;
   border-radius: 10px;
   z-index: 999;
-  min-width: 440px;
+  min-width: 330px;
   box-shadow: 0 1px 10px black;
 }
 
@@ -255,6 +255,24 @@ header {
 
 }
 
-@media (max-width: 476px) {
+@media (max-width: 470px) {
+
+  .logo {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  max-width: 350px;
+  flex-shrink: 0;
+}
+
+.logo a {
+  font-size: 27px;
+  background: linear-gradient(120deg , blue , blueviolet);
+  font-weight: bold;
+  text-decoration: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
   
 }

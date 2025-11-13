@@ -204,6 +204,17 @@
     transform: rotate(-45deg);
 }
 
-@media (max-width: 476px) {
-  
-}
+@media (max-width: 590px) {
+    .signdiv{
+        transform: scale(0.8);
+    }
+
+    .rosi{
+        width: 280px;
+        justify-content: center;
+    }
+
+    .rosi button {
+        transform: scale(0.8);
+    }
+}   

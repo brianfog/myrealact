@@ -10,11 +10,11 @@ function Content({ movi }) {
 
     const likebtn = useRef()
     const unlikebtn = useRef()
-    const { user , setfav} = useContext(userglobal)
-    const [pushed , setpush] = useState(false)
+    const { user, fav } = useContext(userglobal)
+    const [pushed, setpush] = useState(false)
 
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -32,17 +32,16 @@ function Content({ movi }) {
             await api.post("/likeadd", {
                 "useremail": user.email,
                 "movie_id": movi.NAME,
-                "liked": pushed,
+                "liked": !pushed,
                 "movie_pic": movi.IMGADD
             })
-            .then(res => {if (res) {setfav(res.data.favorites)}})
-            
+
         }
     }
 
 
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -52,27 +51,33 @@ function Content({ movi }) {
     */
 
 
+    useEffect(() => {
+        if (fav) {
+            if (fav.includes({ "movid": movi.NAME, "movipic": movi.IMGADD })) {
+                setpush(true);
+            }
+        }
+    }, [])
+
+
 
     useEffect(() => {
 
-    
+
+        if (!pushed) {
+            likebtn.current.style.display = `none`;
+            unlikebtn.current.style.display = `flex`;
+        } else {
+            likebtn.current.style.display = `flex`;
+            unlikebtn.current.style.display = `none`;
+        }
 
 
-        if (pushed) {
-                likebtn.current.style.display = `none`;
-                unlikebtn.current.style.display = `flex`;
-            } else {
-                likebtn.current.style.display = `flex`;
-                unlikebtn.current.style.display = `none`;
-            }
 
-       
+    }, [pushed])
 
 
-    },[pushed])
 
-
-    
     /*
         this is a comment
         it's supposed to be a filler

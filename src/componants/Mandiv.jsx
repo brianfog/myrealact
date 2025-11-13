@@ -1,6 +1,7 @@
 import "./mandiv.css"
 import Content from "./CONTENT"
 import React, { useEffect, useState } from "react"
+import api from "../axe"
 
 
 function MANDIV() {
@@ -22,9 +23,9 @@ function MANDIV() {
 
 
     useEffect(() => {
-        fetch("http://localhost:8000/get_movies")
-            .then(res => res.json())
-            .then(data => {
+        api.get("/get_movies")
+            .then(res => res.data)
+            .then((data) => {
                 setmov(data);
                 setnum(Math.ceil(data.length / 4)); // number of pages
                 setfilm(data.slice(0, 4));

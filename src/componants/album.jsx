@@ -3,6 +3,7 @@ import Reacts, { useRef, useEffect, useContext } from "react";
 import SIGNER from "./Sign"
 import { userglobal } from "../userinfo";
 import USEPANEL from "./userpanel";
+import api from "../axe";
 
 
     /*
@@ -30,6 +31,9 @@ export default function Album() {
             sinp.current.style.display = `flex`;
         } else {
             userpanel.current.style.display = `flex`;
+            api.post("/likget", {"email": user.email})
+            .then(res => {if(res){ setfav(res.data.favs)}})
+            .catch(error => console.error(error))
         }
     }
 
@@ -134,7 +138,7 @@ export default function Album() {
         than getting a headache
     */
 
-    const { user, sinp } = useContext(userglobal);
+    const { user, sinp, setfav } = useContext(userglobal);
 
     
     /*
