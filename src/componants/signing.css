@@ -3,10 +3,10 @@
     display: flex;
     background: rgba(66, 66, 66, 0.5);
     height: 100%;
-    width: 97.5%;
+    width: 97.4%;
     z-index: 999;
     display: none;
-    margin: -8px 0 0 0;
+    margin: -8px 0 0 -20px;
     justify-content: center;
     align-items: center;
     top: 8px;
@@ -209,8 +209,39 @@
         transform: scale(0.8);
     }
 
+    .signindiv{
+        transform: scale(0.8);
+    }
+
+    .signupdiv{
+        transform: scale(0.8);
+    }
+
     .rosi{
         width: 280px;
+        justify-content: center;
+    }
+
+    .rosi button {
+        transform: scale(0.8);
+    }
+}   
+
+@media (max-width: 420px) {
+    .signdiv{
+        transform: scale(0.8);
+    }
+
+    .signindiv{
+        transform: scale(0.8);
+    }
+
+    .signupdiv{
+        transform: scale(0.8);
+    }
+
+    .rosi{
+        width: 200px;
         justify-content: center;
     }
 
