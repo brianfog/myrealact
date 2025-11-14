@@ -11,7 +11,7 @@ function MANDIV() {
     const [num, setnum] = useState(0)
 
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -24,16 +24,18 @@ function MANDIV() {
 
     useEffect(() => {
         api.get("/get_movies")
-            .then(res => res.data)
-            .then((data) => {
-                setmov(data);
-                setnum(Math.ceil(data.length / 4)); // number of pages
-                setfilm(data.slice(0, 4));
+            .then(res => {
+                {
+                    const data = res.data
+                    setmov(data);
+                    setnum(Math.ceil(data.length / 4)); // number of pages
+                    setfilm(data.slice(0, 4));
+                }
             })
     }, []);
 
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -54,7 +56,7 @@ function MANDIV() {
     }
 
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -77,7 +79,7 @@ function MANDIV() {
     };
 
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -85,11 +87,11 @@ function MANDIV() {
         better to clean your code
         than getting a headache
     */
-   
+
 
     const [film, setfilm] = useState([])
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler
