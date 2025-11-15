@@ -20,7 +20,7 @@ export default function SIGNER() {
 
     const [signupname, setupname] = useState('')
 
-    const [tokie , settok] = useState(localStorage.getItem("token") || null)
+    const [tokie , settok] = useState(null)
 
 
     const {user ,setuser , sinp} = useContext(userglobal);
@@ -41,7 +41,6 @@ export default function SIGNER() {
         api.post("/signin", { "useremail": signinname, "userpass": signinpass })
             .then(res => { if (res)  {
                 localStorage.setItem("token" , res.data.token);
-                settok(res.data.token);
             }})
             .catch(error => console.error(error))
 
@@ -72,7 +71,6 @@ export default function SIGNER() {
             .then(res => {
                 if (res) {
                     localStorage.setItem("token",res.data.token);
-                    settok(res.data.token);
                 }
             })
             .catch(error => console.error(error))
@@ -129,6 +127,7 @@ export default function SIGNER() {
     useEffect(() => {
 
          if (localStorage.getItem("token")){
+            settok(localStorage.getItem("token"));
             sinp.current.style.display= `none`;
         }
 
