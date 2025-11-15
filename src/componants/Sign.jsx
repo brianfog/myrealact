@@ -129,7 +129,6 @@ export default function SIGNER() {
     useEffect(() => {
 
          if (localStorage.getItem("token")){
-            settok(localStorage.getItem("token"));
             sinp.current.style.display= `none`;
         }
 
