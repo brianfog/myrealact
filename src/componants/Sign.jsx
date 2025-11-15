@@ -20,7 +20,7 @@ export default function SIGNER() {
 
     const [signupname, setupname] = useState('')
 
-    const [tokie , settok] = useState(null)
+    const [tokie , settok] = useState( localStorage.getItem("token") || null)
 
 
     const {user ,setuser , sinp} = useContext(userglobal);
