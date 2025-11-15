@@ -41,6 +41,7 @@ export default function SIGNER() {
         api.post("/signin", { "useremail": signinname, "userpass": signinpass })
             .then(res => { if (res)  {
                 localStorage.setItem("token" , res.data.token);
+                settok(res.data.token);
             }})
             .catch(error => console.error(error))
 
@@ -71,6 +72,7 @@ export default function SIGNER() {
             .then(res => {
                 if (res) {
                     localStorage.setItem("token",res.data.token);
+                    settok(res.data.token);
                 }
             })
             .catch(error => console.error(error))
