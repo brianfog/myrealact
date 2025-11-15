@@ -36,9 +36,9 @@ export default function SIGNER() {
     */
 
 
-    function signpost(e) {
+    async function signpost(e) {
         e.preventDefault();
-        api.post("/signin", { "useremail": signinname, "userpass": signinpass })
+        await api.post("/signin", { "useremail": signinname, "userpass": signinpass })
             .then(res => { if (res)  {
                 localStorage.setItem("token" , res.data.token);
                 settok(res.data.token);
