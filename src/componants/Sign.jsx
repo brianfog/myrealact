@@ -51,7 +51,7 @@ export default function SIGNER() {
         setTimeout(() => {
             closer()
             window.location.reload();
-        }, 500);
+        }, 800);
         
     }
 
@@ -80,7 +80,7 @@ export default function SIGNER() {
         setTimeout(() => {
             closer()
             window.location.reload();
-        }, 500);
+        }, 800);
            
     }
 
