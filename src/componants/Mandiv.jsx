@@ -1,6 +1,6 @@
 import "./mandiv.css"
 import Content from "./CONTENT"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import api from "../axe"
 
 
@@ -10,6 +10,7 @@ function MANDIV() {
 
     const [num, setnum] = useState(0)
 
+    const load = useRef(null)
 
 
     /*
@@ -23,6 +24,8 @@ function MANDIV() {
 
 
     useEffect(() => {
+        load.current.style.display = `flex`;
+
         api.get("/get_movies")
             .then(res => {
                 {
@@ -32,6 +35,10 @@ function MANDIV() {
                     setfilm(data.slice(0, 4));
                 }
             })
+            .finally(() => {
+                load.current.style.display = `none`;
+            })
+
     }, []);
 
 
@@ -105,6 +112,7 @@ function MANDIV() {
 
 
         <main>
+            <div className="loading" ref={load}>Loading...</div>
             {film.map((movie, index) => (<Content key={index} movi={movie} />))}
             <div className="page-count">
                 {Array.from({ length: num }, (_, fo) => (<button className="pagbt" onClick={() => handlbt(fo)} key={fo}>{fo + 1}</button>))}

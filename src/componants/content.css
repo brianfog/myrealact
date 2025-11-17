@@ -201,6 +201,10 @@
         grid-template-rows: 310px 70px 160px 60px;
     }
 
+    .c-title h1 {
+        font-size: 25px;
+    }
+
     .picture {
         grid-area: 1/1/2/1;
         display: flex;

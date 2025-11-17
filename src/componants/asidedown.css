@@ -16,9 +16,23 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    padding-top: 90px;
-    padding-bottom: 50px;
+    padding-top: 120px;
+    padding-bottom: 35px;
     margin-bottom: 20px;
+}
+
+.Category {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: start;
+    align-items: start;
+    width: 250px;
+    
+}
+
+.Category li {
+    margin-bottom: 30px;
 }
 
 @media screen and (max-width : 900px) {
