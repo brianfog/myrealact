@@ -2,7 +2,7 @@
     position: fixed;
     background: rgba(66, 66, 66, 0.5);
     height: 100%;
-    width: 97.4%;
+    width: 100%;
     z-index: 999;
     display: none;
     margin: -8px 0 0 -20px;
@@ -168,6 +168,8 @@
 }
 
 @media (max-width : 509px){
+
+
     .useppan{
         transform: scale(0.6);
     }

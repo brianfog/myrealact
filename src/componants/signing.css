@@ -3,7 +3,7 @@
     display: flex;
     background: rgba(66, 66, 66, 0.5);
     height: 100%;
-    width: 97.4%;
+    width: 100%;
     z-index: 999;
     display: none;
     margin: -8px 0 0 -20px;
@@ -11,6 +11,10 @@
     align-items: center;
     top: 8px;
     transition: 1s ease;
+}
+
+.signpage input:focus {
+    outline: none;
 }
 
 .signdiv {
@@ -228,6 +232,8 @@
 }   
 
 @media (max-width: 420px) {
+
+
     .signdiv{
         transform: scale(0.8);
     }

@@ -12,6 +12,10 @@ header {
   box-shadow: 0 1px 10px black;
 }
 
+header input:focus {
+  outline: none;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -261,7 +265,7 @@ header {
   display: flex;
   justify-content: start;
   align-items: center;
-  max-width: 350px;
+  max-width: 200px;
   flex-shrink: 0;
 }
 
