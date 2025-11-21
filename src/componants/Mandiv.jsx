@@ -26,7 +26,8 @@ function MANDIV() {
     useEffect(() => {
         load.current.style.display = `flex`;
 
-        api.get("/get_movies")
+        const getmoc = async () => {
+            await api.get("/get_movies")
             .then(res => {
                 {
                     const data = res.data
@@ -37,7 +38,9 @@ function MANDIV() {
             })
             .finally(() => {
                 load.current.style.display = `none`;
-            })
+            })}
+
+        getmoc();
 
     }, []);
 
