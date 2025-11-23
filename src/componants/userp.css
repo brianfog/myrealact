@@ -244,3 +244,13 @@
 
     
 }
+
+@media screen and (max-width : 460px){
+
+
+    .liksec {
+        width: 240px;
+        grid-template-columns: repeat(2, 120px);
+        gap: 80px;
+    }
+}
