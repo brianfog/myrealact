@@ -208,50 +208,58 @@
     transform: rotate(-45deg);
 }
 
-@media (max-width: 590px) {
-    .signdiv{
-        transform: scale(0.8);
+.flip {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .rosi {
+        display: none;
     }
 
-    .signindiv{
-        transform: scale(0.8);
+    .signdiv {
+        width: 70%;
     }
 
-    .signupdiv{
-        transform: scale(0.8);
+    .signupdiv {
+        align-items: center;
     }
 
-    .rosi{
-        width: 280px;
+    .signindiv {
+        align-items: center;
+    }
+
+    .signin {
+        display: none;
+    }
+
+    .signin button {
+        margin-left: 0;
+    }
+
+    .signup input {
+        width: 100%;
+    }
+
+    .signup button {
+        margin-left: 0;
+    }
+
+    .flip {
+        display: flex;
+        position: absolute;
+        right: 0;
+        border: none;
+        height: 40px;
+        width: 40px;
+        top: 0;
         justify-content: center;
+        align-items: center;
     }
 
-    .rosi button {
-        transform: scale(0.8);
-    }
-}   
-
-@media (max-width: 420px) {
-
-
-    .signdiv{
-        transform: scale(0.8);
+    .flip img {
+        height: 35px;
+        width: 35px;
     }
 
-    .signindiv{
-        transform: scale(0.8);
-    }
-
-    .signupdiv{
-        transform: scale(0.8);
-    }
-
-    .rosi{
-        width: 200px;
-        justify-content: center;
-    }
-
-    .rosi button {
-        transform: scale(0.8);
-    }
-}   
+}

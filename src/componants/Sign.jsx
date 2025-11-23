@@ -1,12 +1,17 @@
 import './signing.css'
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import api from '../axe';
+import changer from '.././assets/transfer-data.png'
 import { userglobal } from '../userinfo';
 
 
 export default function SIGNER() {
-    
 
+    let onphone = false;
+
+    const signinphone = useRef(null);
+
+    const signupphone = useRef(null);
 
     const [signinname, setnamelog] = useState('')
 
@@ -20,10 +25,10 @@ export default function SIGNER() {
 
     const [signupname, setupname] = useState('')
 
-    const [tokie , settok] = useState( localStorage.getItem("token") || null)
+    const [tokie, settok] = useState(localStorage.getItem("token") || null)
 
 
-    const {user ,setuser , sinp} = useContext(userglobal);
+    const { user, setuser, sinp } = useContext(userglobal);
 
 
     /*
@@ -39,24 +44,37 @@ export default function SIGNER() {
     async function signpost(e) {
         e.preventDefault();
         await api.post("/signin", { "useremail": signinname, "userpass": signinpass })
-            .then(res => { if (res)  {
-                localStorage.setItem("token" , res.data.token);
-                settok(res.data.token);
-            }})
+            .then(res => {
+                if (res) {
+                    localStorage.setItem("token", res.data.token);
+                    settok(res.data.token);
+                }
+            })
             .catch(error => console.error(error))
 
 
-        
+
 
         setTimeout(() => {
             closer()
             window.location.reload();
         }, 800);
-        
+
     }
 
 
-    
+
+    const changerbtn = () => {
+        onphone = !onphone;
+        if (onphone) {
+            signinphone.current.style.display = `flex`;
+            signupphone.current.style.display = `none`;
+        } else {
+            signinphone.current.style.display = `none`;
+            signupphone.current.style.display = `flex`;
+        }
+    }
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -71,21 +89,21 @@ export default function SIGNER() {
         await api.post("/signup", { "username": signupname, "useremailnew": signupemail, "userpass": signuppass })
             .then(res => {
                 if (res) {
-                    localStorage.setItem("token",res.data.token);
+                    localStorage.setItem("token", res.data.token);
                     settok(res.data.token);
                 }
             })
             .catch(error => console.error(error))
-        
+
         setTimeout(() => {
             closer()
             window.location.reload();
         }, 800);
-           
+
     }
 
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -99,7 +117,7 @@ export default function SIGNER() {
     const slibtn = useRef(null);
 
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -107,7 +125,7 @@ export default function SIGNER() {
         better to clean your code
         than getting a headache
     */
-    
+
 
 
     const closer = () => {
@@ -115,7 +133,7 @@ export default function SIGNER() {
     };
 
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -128,14 +146,14 @@ export default function SIGNER() {
 
     useEffect(() => {
 
-         if (localStorage.getItem("token")){
+        if (localStorage.getItem("token")) {
             settok(localStorage.getItem("token"));
-            sinp.current.style.display= `none`;
+            sinp.current.style.display = `none`;
         }
 
-    },[settok])
+    }, [settok])
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -147,25 +165,25 @@ export default function SIGNER() {
     useEffect(() => {
 
         if (tokie) {
-            api.post("/tokverify", {"token" : tokie})
+            api.post("/tokverify", { "token": tokie })
                 .then(res => {
                     setuser(res.data);
                     console.log(user);
                 })
                 .catch(error => console.error(error))
 
-               
+
         }
 
 
-        
-    /*
-        this is a comment
-        it's supposed to be a filler
-        so i can read my code easier
-        better to clean your code
-        than getting a headache
-    */
+
+        /*
+            this is a comment
+            it's supposed to be a filler
+            so i can read my code easier
+            better to clean your code
+            than getting a headache
+        */
 
 
         if (!slirose.current || !slibtn.current) return;
@@ -186,7 +204,7 @@ export default function SIGNER() {
     }, [tokie, slirose, slibtn]);
 
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -199,7 +217,7 @@ export default function SIGNER() {
     return (
         <div className='signpage' ref={sinp}>
             <div className='signdiv'>
-                <div className="signin">
+                <div className="signin" ref={signinphone}>
                     <form onSubmit={signpost}>
                         <div className='signindiv'>
                             <label>Email Address</label>
@@ -210,7 +228,7 @@ export default function SIGNER() {
                         <button type='submit'>Submit</button>
                     </form>
                 </div>
-                <div className="signup">
+                <div className="signup" ref={signupphone}>
                     <form onSubmit={signupost}>
                         <div className='signupdiv'>
                             <label>User Name</label>
@@ -228,6 +246,9 @@ export default function SIGNER() {
                 <div className="rosi" ref={slirose}>
                     <button ref={slibtn}> Sign In </button>
                 </div>
+                <button className='flip' onClick={() => changerbtn()}>
+                    <img src={changer} alt="flip" />
+                </button>
             </div>
             <div className="close" onClick={closer} >
                 <span></span>
