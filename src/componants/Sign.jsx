@@ -42,24 +42,25 @@ export default function SIGNER() {
 
 
     async function signpost(e) {
-        e.preventDefault();
-        await api.post("/signin", { "useremail": signinname, "userpass": signinpass })
-            .then(res => {
-                if (res) {
-                    localStorage.setItem("token", res.data.token);
-                    settok(res.data.token);
-                }
-            })
-            .catch(error => console.error(error))
+        if (signinpass && signinname) {
+            e.preventDefault();
+            await api.post("/signin", { "useremail": signinname, "userpass": signinpass })
+                .then(res => {
+                    if (res) {
+                        localStorage.setItem("token", res.data.token);
+                        settok(res.data.token);
+                    }
+                })
+                .catch(error => console.error(error))
 
 
 
 
-        setTimeout(() => {
-            closer()
-            window.location.reload();
-        }, 800);
-
+            setTimeout(() => {
+                closer()
+                window.location.reload();
+            }, 100);
+        }
     }
 
 
@@ -67,11 +68,11 @@ export default function SIGNER() {
     const changerbtn = () => {
         onphone = !onphone;
         if (onphone) {
-            signinphone.current.style.display = `flex`;
-            signupphone.current.style.display = `none`;
+            signinphone.current.style.zIndex = `3`;
+            signupphone.current.style.zIndex = `4`;
         } else {
-            signinphone.current.style.display = `none`;
-            signupphone.current.style.display = `flex`;
+            signinphone.current.style.zIndex = `4`;
+            signupphone.current.style.zIndex = `3`;
         }
     }
 
@@ -85,20 +86,23 @@ export default function SIGNER() {
 
 
     async function signupost(e) {
-        e.preventDefault();
-        await api.post("/signup", { "username": signupname, "useremailnew": signupemail, "userpass": signuppass })
-            .then(res => {
-                if (res) {
-                    localStorage.setItem("token", res.data.token);
-                    settok(res.data.token);
-                }
-            })
-            .catch(error => console.error(error))
 
-        setTimeout(() => {
-            closer()
-            window.location.reload();
-        }, 800);
+        if (signuppass == signupcon && signupemail && signupname) {
+            e.preventDefault();
+            await api.post("/signup", { "username": signupname, "useremailnew": signupemail, "userpass": signuppass })
+                .then(res => {
+                    if (res) {
+                        localStorage.setItem("token", res.data.token);
+                        settok(res.data.token);
+                    }
+                })
+                .catch(error => console.error(error))
+
+            setTimeout(() => {
+                closer()
+                window.location.reload();
+            }, 500);
+        }
 
     }
 
@@ -221,7 +225,7 @@ export default function SIGNER() {
                     <form onSubmit={signpost}>
                         <div className='signindiv'>
                             <label>Email Address</label>
-                            <input type="text" placeholder='Your Email' value={signinname} onChange={(e) => setnamelog(e.target.value)} />
+                            <input type="email" placeholder='Your Email' value={signinname} onChange={(e) => setnamelog(e.target.value)} />
                             <label>Password</label>
                             <input type="password" placeholder='Your Password' value={signinpass} onChange={(e) => setpasslog(e.target.value)} />
                         </div>
@@ -234,7 +238,7 @@ export default function SIGNER() {
                             <label>User Name</label>
                             <input type="text" placeholder='Your User Name' value={signupname} onChange={(e) => setupname(e.target.value)} />
                             <label>Email Address</label>
-                            <input type="text" placeholder='Your Email' value={signupemail} onChange={(e) => setemailsign(e.target.value)} />
+                            <input type="email" placeholder='Your Email' value={signupemail} onChange={(e) => setemailsign(e.target.value)} />
                             <label>Password</label>
                             <input type="password" placeholder='Your Password' value={signuppass} onChange={(e) => setpassign(e.target.value)} />
                             <label>Confirm Password</label>

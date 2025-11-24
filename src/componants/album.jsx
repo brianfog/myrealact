@@ -4,6 +4,7 @@ import SIGNER from "./Sign"
 import { userglobal } from "../userinfo";
 import USEPANEL from "./userpanel";
 import api from "../axe";
+import usericon from '../assets/useicon.png'
 
 
     /*
@@ -160,7 +161,9 @@ export default function Album() {
                         <button> User Manual</button>
                         <button> Social Media</button>
                     </div>
-                    <img src="" />
+                    <div className="user-pf-img">
+                        <img src={usericon} />
+                    </div>
                 </div>
                 <div className="wholeslide">
                     <div className="slide" ref={sliref}>

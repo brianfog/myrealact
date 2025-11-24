@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import "./userp.css"
 import { userglobal } from "../userinfo";
-
+import usericon from '../assets/useicon.png';
 
 
 export default function USEPANEL({ props, use }) {
 
 
-    const {setuser , fav} = useContext(userglobal)
+    const { setuser, fav } = useContext(userglobal)
 
 
     const closer = () => {
@@ -15,7 +15,7 @@ export default function USEPANEL({ props, use }) {
     };
 
 
-    function signoutbtn(){
+    function signoutbtn() {
         localStorage.removeItem("token")
         setuser(null)
         closer()
@@ -29,7 +29,9 @@ export default function USEPANEL({ props, use }) {
 
                 <div className="use-right">
                     <div className="realprof">
-                        <img />
+                        <div className="realprof-img">
+                            <img src={usericon} />
+                        </div>
                         <div className="NAMail">
                             <h1>{use?.user_name || "Loading..."}</h1>
                             <p>{use?.email || ""}</p>
@@ -40,12 +42,14 @@ export default function USEPANEL({ props, use }) {
                         Sign Out
                     </button>
                 </div>
-                <h1 className="fav">Favorite</h1>
+                <div className="fav">
+                    <h1>Favorite</h1>
+                </div>
                 <div className="use-left">
                     <div className="liksec">
 
-                        {fav.map((movie) => (<div className="liked"> 
-                            <img src={movie.movipic} alt={movie.movid}/>
+                        {fav.map((movie) => (<div className="liked">
+                            <img src={movie.movipic} alt={movie.movid} />
                         </div>))}
 
                     </div>

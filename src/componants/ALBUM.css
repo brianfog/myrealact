@@ -32,16 +32,20 @@
     animation: shiny 5s linear infinite;
 }
 
-.user-pf img {
+.user-pf-img {
     position: absolute;
     left: 50px;
     top: 30px;
     height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 150px;
     border-radius: 80px;
     background-color: gray;
-    border: 2px solid black;
+    border: 3px solid black;
 }
+
 
 .user-option {
     height: 100%;
