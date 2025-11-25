@@ -271,11 +271,9 @@
 
     .user-pf-img {
         position: absolute;
-        left: 30px;
+        left: -10px;
         top: 30px;
-        height: 70px;
-        width: 70px;
-        border-radius: 35px;
+        transform: scale(0.6);
         background-color: gray;
         border: 2px solid black;
     }
