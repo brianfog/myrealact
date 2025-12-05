@@ -92,6 +92,7 @@
     align-items: start;
     padding: 6px;
     overflow: scroll;
+    scrollbar-width: thin;
 }
 
 .aft {
