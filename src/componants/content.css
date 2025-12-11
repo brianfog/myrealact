@@ -242,6 +242,7 @@
     .plot p {
         grid-area: 3/1/4/1;
         font-size: 16px;
+        text-align: justify;
     }
 
 
