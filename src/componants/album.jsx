@@ -7,13 +7,13 @@ import api from "../axe";
 import usericon from '../assets/useicon.png'
 
 
-    /*
-        this is a comment
-        it's supposed to be a filler
-        so i can read my code easier
-        better to clean your code
-        than getting a headache
-    */
+/*
+    this is a comment
+    it's supposed to be a filler
+    so i can read my code easier
+    better to clean your code
+    than getting a headache
+*/
 
 export default function Album() {
 
@@ -32,13 +32,22 @@ export default function Album() {
             sinp.current.style.display = `flex`;
         } else {
             userpanel.current.style.display = `flex`;
-            api.post("/likget", {"email": user.email})
-            .then(res => {if(res){ setfav(res.data.favs)}})
-            .catch(error => console.error(error))
+            api.post("/likget", { "email": user.email })
+                .then(res => { if (res) { setfav(res.data.favs) } })
+                .catch(error => console.error(error))
         }
     }
 
-    
+
+    function getSlideLimit() {
+        const w = window.innerWidth;
+
+        if (w < 480) return 80;     // phones
+        if (w < 768) return 120;    // tablets
+        if (w < 1024) return 180;   // small laptops
+        return 240;                // desktop
+    }
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -46,13 +55,18 @@ export default function Album() {
         better to clean your code
         than getting a headache
     */
+    const sliref = useRef(null);
 
+    const pos = useRef(0);        // saved position
+    const startX = useRef(0);     // pointer start
+    const dragging = useRef(false);
+    const limit = useRef(getSlideLimit());
     const userpanel = useRef(null)
 
-    const sliref = useRef(null)
 
 
-    
+
+
     /*
         this is a comment
         it's supposed to be a filler
@@ -60,77 +74,82 @@ export default function Album() {
         better to clean your code
         than getting a headache
     */
-
-
 
     useEffect(() => {
 
-        const slis = sliref.current;
-        let drag = false;
-        let starx = 0;
-        let subt = 0;
-        let sumb = 0;
+        const el = sliref.current;
+        if (!el) return;
 
-        
-    /*
-        this is a comment
-        it's supposed to be a filler
-        so i can read my code easier
-        better to clean your code
-        than getting a headache
-    */
-
-        const pendown = (e) => {
-            starx = e.clientX;
-            drag = true;
+        const updateLimit = () => {
+            limit.current = getSlideLimit();
+            pos.current = Math.max(
+                -limit.current,
+                Math.min(limit.current, pos.current)
+            );
+            el.style.transform = `translateX(${pos.current}px)`;
         };
 
-        const penmove = (e) => {
-            if (drag) {
-                subt = e.clientX - starx;
-                let sup = subt + sumb;
-                if (sup > 100) sup = 120;
-                if (sup < -100) sup = -120;
-                slis.style.transform = `translateX(${sup}px)`;
+        const onDown = (e) => {
+            dragging.current = true;
+            startX.current = e.clientX;
+            el.setPointerCapture(e.pointerId);
+        };
+
+        const onMove = (e) => {
+            if (!dragging.current) return;
+
+            const delta = e.clientX - startX.current;
+            let next = pos.current + delta;
+
+            // soft stretch effect
+            if (next > limit.current) {
+                next =
+                    limit.current +
+                    (next - limit.current) * 0.15;
             }
+            if (next < -limit.current) {
+                next =
+                    -limit.current +
+                    (next + limit.current) * 0.15;
+            }
+
+            el.style.transform = `translateX(${next}px)`;
         };
 
-        const penup = () => {
-            drag = false;
-            sumb += subt;
+        const onUp = () => {
+            if (!dragging.current) return;
+            dragging.current = false;
 
-            subt = 0;
+            const matrix = new DOMMatrixReadOnly(
+                getComputedStyle(el).transform
+            );
+            pos.current = Math.max(
+                -limit.current,
+                Math.min(limit.current, matrix.m41)
+            );
 
+            el.style.transition = "transform 0.25s ease";
+            el.style.transform = `translateX(${pos.current}px)`;
+
+            requestAnimationFrame(() => {
+                el.style.transition = "";
+            });
         };
 
-        
-    /*
-        this is a comment
-        it's supposed to be a filler
-        so i can read my code easier
-        better to clean your code
-        than getting a headache
-    */
-
-        slis.addEventListener("pointerdown", pendown);
-
-        window.addEventListener("pointermove", penmove);
-
-        window.addEventListener("pointerup", penup);
+        el.addEventListener("pointerdown", onDown);
+        window.addEventListener("pointermove", onMove);
+        window.addEventListener("pointerup", onUp);
+        window.addEventListener("resize", updateLimit);
 
         return () => {
-            slis.removeEventListener("pointerdown", pendown);
-
-            window.removeEventListener("pointermove", penmove);
-
-            window.removeEventListener("pointerup", penup);
+            el.removeEventListener("pointerdown", onDown);
+            window.removeEventListener("pointermove", onMove);
+            window.removeEventListener("pointerup", onUp);
+            window.removeEventListener("resize", updateLimit);
         };
+    }, []);
 
 
-
-    }, [])
-
-    
     /*
         this is a comment
         it's supposed to be a filler
@@ -141,7 +160,7 @@ export default function Album() {
 
     const { user, sinp, setfav } = useContext(userglobal);
 
-    
+
     /*
         this is a comment
         it's supposed to be a filler

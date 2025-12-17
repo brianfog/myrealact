@@ -125,6 +125,8 @@
     min-width: 0px;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: 0.01s ease;
 }
 
 .sitem {
