@@ -39,13 +39,21 @@ export default function Album() {
     }
 
 
+    /*
+        this is a comment
+        it's supposed to be a filler
+        so i can read my code easier
+        better to clean your code
+        than getting a headache
+    */
+
     function getSlideLimit() {
         const w = window.innerWidth;
 
-        if (w < 480) return 80;     // phones
-        if (w < 768) return 120;    // tablets
-        if (w < 1024) return 180;   // small laptops
-        return 240;                // desktop
+        if (w < 480) return 120;     // phones
+        if (w < 768) return 170;    // tablets
+        if (w < 1024) return 280;   // small laptops
+        return 300;                // desktop
     }
 
     /*
@@ -101,7 +109,6 @@ export default function Album() {
             const delta = e.clientX - startX.current;
             let next = pos.current + delta;
 
-            // soft stretch effect
             if (next > limit.current) {
                 next =
                     limit.current +
