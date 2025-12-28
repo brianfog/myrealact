@@ -1,7 +1,7 @@
 import "./mandiv.css"
 import Content from "./CONTENT"
 import React, { useEffect, useRef, useState } from "react"
-import api from "../axe"
+import movilist from "../../DataBase/MOV.Movie.json";
 
 
 function MANDIV() {
@@ -26,21 +26,12 @@ function MANDIV() {
     useEffect(() => {
         load.current.style.display = `flex`;
 
-        const getmoc = async () => {
-            await api.get("/get_movies")
-            .then(res => {
-                {
-                    const data = res.data
-                    setmov(data);
-                    setnum(Math.ceil(data.length / 4)); // number of pages
-                    setfilm(data.slice(0, 4));
-                }
-            })
-            .finally(() => {
-                load.current.style.display = `none`;
-            })}
 
-        getmoc();
+        setmov(movilist);
+        setnum(Math.ceil(movilist.length / 4)); // number of pages
+        setfilm(movilist.slice(0, 4));
+
+        load.current.style.display = `none`;
 
     }, []);
 

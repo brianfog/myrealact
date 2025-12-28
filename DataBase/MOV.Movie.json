@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "68f7fb303f04fb9f6e30539e"
+  },
+  "NAME": "Avatar",
+  "SCORE": 7.8,
+  "LANGUAGE": "English",
+  "COUNTRY": "USA",
+  "PLOT": "in another world where every person has a blue skin",
+  "IMGADD": "https://lumiere-a.akamaihd.net/v1/images/avatar_800x1200_208c9665.jpeg?region=0%2C0%2C800%2C1200"
+},
+{
+  "_id": {
+    "$oid": "68f7fb303f04fb9f6e30539f"
+  },
+  "NAME": "Hunger Games",
+  "SCORE": 6.7,
+  "LANGUAGE": "English",
+  "COUNTRY": "USA , Canada",
+  "PLOT": "in a world where you have to kill to survive",
+  "IMGADD": "https://m.media-amazon.com/images/M/MV5BMWI1OGM4YjQtNmIxNi00YmE2LWJkNTAtY2Q0YjU4NTI5NWQyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+},
+{
+  "_id": {
+    "$oid": "68f7fbc4a82ac0c90d550592"
+  },
+  "NAME": "The Lone Ranger",
+  "SCORE": 6.5,
+  "LANGUAGE": "English",
+  "COUNTRY": "USA",
+  "PLOT": "a cowboy who's also a lawyer",
+  "IMGADD": "https://lumiere-a.akamaihd.net/v1/images/p_theloneranger_19880_f1731456.jpeg"
+},
+{
+  "_id": {
+    "$oid": "68f7fbf4a82ac0c90d550593"
+  },
+  "NAME": "Interstellar",
+  "SCORE": 8.6,
+  "LANGUAGE": "English",
+  "COUNTRY": "USA",
+  "PLOT": "a father with duties",
+  "IMGADD": "https://artofthemovies.co.uk/cdn/shop/files/IMG_8291_1024x1024@2x.jpg?v=1737549215"
+},
+{
+  "_id": {
+    "$oid": "68fa5a4065ed124f53548409"
+  },
+  "NAME": "Book Of Life",
+  "SCORE": 7.2,
+  "LANGUAGE": "English",
+  "COUNTRY": "USA",
+  "PLOT": "a father with duties",
+  "IMGADD": ""
+},
+{
+  "_id": {
+    "$oid": "68fa5a4265ed124f5354840a"
+  },
+  "NAME": "Hello World",
+  "SCORE": 8.4,
+  "LANGUAGE": "English",
+  "COUNTRY": "USA",
+  "PLOT": "a father with duties",
+  "IMGADD": ""
+}]
