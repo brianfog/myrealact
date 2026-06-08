@@ -1,4 +1,4 @@
-import MANDIV from "./Mandiv"
+import MANDIV from "./Main_div"
 import ASIDE from "./Aside"
 import SIDOWN from "./Asidown"
 import "./misde.css"

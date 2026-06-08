@@ -1,7 +1,8 @@
 .Midse {
     height: max-content;
     display: grid;
-    grid-template-columns: 400px 1fr;
+    margin-top: 1.5%;
+    grid-template-columns: 27% 1fr;
     grid-template-rows: auto 1fr;
     column-gap: 20px;
     row-gap: 20px;
@@ -11,19 +12,22 @@
     ;
 }
 
-@media  screen and (max-width : 900px) {
-    .Midse {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        grid-template-areas: 
-        'tside'
-        'main'
-        'bside'
-        ;
-        row-gap: 3px;
-    }
+.bottomsider {
+    grid-area: bside;
 }
 
-@media (max-width: 476px) {
-  
+
+
+@media  screen and (max-width : 600px) {
+    .Midse {
+        margin-top: 3%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+        'tside bside'
+        'main main';
+        column-gap: 3%;
+        row-gap: 1.2%;
+    }
+    
 }

@@ -187,46 +187,21 @@ export default function Album() {
                         <button> User Manual</button>
                         <button> Social Media</button>
                     </div>
+
+                    <div className="wholeslide">
+                        <div className="slide" ref={sliref}>
+                            {
+                                Array.from({ length: 9 }, (_, i) => (
+                                    <div className="sitem" key={i}>
+                                        <img src="" />
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+
                     <div className="user-pf-img">
                         <img src={usericon} />
-                    </div>
-                </div>
-                <div className="wholeslide">
-                    <div className="slide" ref={sliref}>
-                        <div className="sitem">
-                            <img src="" />
-                        </div>
-                        <div className="sitem">
-                            <img src="" />
-                        </div>
-                        <div className="sitem">
-                            <img src="" />
-                        </div>
-                        <div className="sitem">
-                            <img src="" />
-                        </div>
-                        <div className="sitem">
-                            <img src="" />
-                        </div>
-                        <div className="sitem">
-                            <img src="" />
-                        </div>
-                        <div className="sitem">
-                            <img src="" />
-                        </div>
-                        <div className="sitem">
-                            <img src="" />
-                        </div>
-                    </div>
-                </div>
-                <div className="albom">
-                    <div className="one">
-                    </div>
-                    <div className="two">
-                    </div>
-                    <div className="three">
-                    </div>
-                    <div className="four">
                     </div>
                 </div>
 

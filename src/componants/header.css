@@ -29,12 +29,12 @@ header input:focus {
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 350px;
+  width: 30%;
   flex-shrink: 0;
 }
 
 .logo a {
-  font-size: 40px;
+  font-size: 2.5vw;
   background: linear-gradient(120deg , blue , blueviolet);
   font-weight: bold;
   text-decoration: none;
@@ -47,11 +47,12 @@ header input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 350px;
+  width: 25%;
+  position: relative;
 }
 
 .lism{
-  width: 350px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
