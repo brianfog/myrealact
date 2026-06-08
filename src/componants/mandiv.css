@@ -19,8 +19,8 @@ main {
 }
 
 .pagbt {
-    width: 50px;
-    height: 50px;
+    aspect-ratio: 1;
+    width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,6 +39,8 @@ main {
     color: rgb(40 , 40 , 40);
 }
 
-@media (max-width: 476px) {
-  
+@media (max-width: 600px) {
+    .page-count{
+        margin-top: 3%;
+    }
 }

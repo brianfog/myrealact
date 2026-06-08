@@ -143,21 +143,89 @@
 }
 
 @media screen and (max-width: 600px) {
+    
 
     .content{
-        margin-bottom: 3.1%;
+        height: 560px;
     }
-    
+
+    .c-title{
+        aspect-ratio: unset;
+        height: 8%;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .c-title h1{
+        font-size: 5vw;
+    }
+
+    .main-content{
+        height: 90%;
+        aspect-ratio: unset;
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 8% 75px 10%;
+        justify-content: center;
+        justify-items: center;
+        gap: 2%;
+    }
+
     .main-content button{
+        grid-area: 4/1/5/1;
         font-size: 2.2vw;
+        aspect-ratio: unset;
+        height: 100%;
+    }
+
+
+    .picture{
+        grid-area: 1/1/2/1;
+        width: unset;
+        height: 300px;
+        box-shadow: 0 1px 7px rgb(83, 83, 83);
+    }
+
+
+    .genre{
+        grid-area: 2/1/3/1;
+        aspect-ratio: unset;
+        height: 100%;
+        align-items: center;
+        flex-direction: row;
+    }
+
+
+    .plot{
+        grid-area: 3/1/4/1;
+        aspect-ratio:unset;
+        height: 75px;
+        
     }
 
     .genre p{
-        font-size: 1.6vw;
+        font-size: 2vw;
+        margin-left: 0;
     }
 
     .plot p{
-        font-size: 1.6vw;
+        font-size: 2vw;
+    }
+
+}
+
+@media screen and (max-width:470px) {
+    
+    .main-content button{
+        font-size: 3.5vw;
+    }
+
+    .genre p{
+        font-size: 2.1vw;
+    }
+
+    .plot p{
+        font-size: 2.3vw;
     }
 
 }

@@ -97,6 +97,9 @@ function Content({ movi }) {
                 </button>
             </div>
             <div className="main-content">
+                <div className="picture">
+                    <img src={movi.IMGADD} />
+                </div>
                 <div className="genre">
                     <p>Score : <a>{movi.SCORE}</a></p>
                     <p>Country : <a>{movi.COUNTRY}</a></p>
@@ -105,9 +108,6 @@ function Content({ movi }) {
                 </div>
                 <div className="plot">
                     <p> {movi.PLOT}</p>
-                </div>
-                <div className="picture">
-                    <img src={movi.IMGADD} />
                 </div>
                 <button>Watch</button>
             </div>

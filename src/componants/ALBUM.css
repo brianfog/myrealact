@@ -8,6 +8,7 @@
 }
 
 .user-pf {
+    min-height: 160px;
     flex-shrink: 0;
     width: 100%;
     aspect-ratio: 7;
@@ -105,6 +106,42 @@
     box-shadow: 0 1px 10px gray;
 }
 
+@media screen and (max-width: 1068px) {
+    
+    .user-option button{
+        font-size: 1.8vw;
+    }
+
+}
+
+@media screen and (max-width: 740px) {
+    
+    .user-option button{
+        font-size: 2.3vw;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    
+    
+    .wholeslide{
+        display: none;
+    }
+
+    .user-option{
+        aspect-ratio: 1.5;
+    }
+
+    .user-option button{
+        aspect-ratio: 8;
+    }
+
+    .user-pf{
+        justify-content: space-around;
+    }
+
+}
 
 @media screen and (max-width: 600px) {
 
@@ -116,7 +153,21 @@
         aspect-ratio: 4;
     }
 
-    .user-option button {
-        font-size: 2vw;
+}
+
+@media screen and (max-width: 444px) {
+    
+    .user-pf{
+        justify-content: space-between;
     }
+
+    .user-option{
+        aspect-ratio: 1.1;
+    }
+
+    .user-option button{
+        font-size: 3vw;
+        aspect-ratio: 4;
+    }
+
 }

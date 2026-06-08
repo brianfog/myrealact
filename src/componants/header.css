@@ -71,7 +71,7 @@ header{
 
 .search-sec button{
   background: linear-gradient(90deg,blue,blueviolet);
-  height: 103%;
+  height: 105%;
   position: absolute;
   right: -3%;
   z-index: 2;
@@ -172,5 +172,50 @@ header{
   }
 
 
+
+}
+
+@media screen and (max-width:500px) {
+  
+  header{
+    aspect-ratio: 1.8;
+    padding-top: 10%;
+  }
+
+  .nav{
+    grid-template-columns: 100%;
+
+    grid-template-rows: repeat(3,auto);
+
+    grid-template-areas: 
+    'logo'
+    'menus'
+    'search'
+    ;
+
+    justify-content: center;
+
+  }
+
+  .logo{
+    justify-content: center;
+  }
+
+  .logo a{
+    margin-left: 0;
+    font-size: 6vw;
+  }
+
+
+
+  .menu{
+    width: 90%;
+    margin-left: 1%;
+  }
+
+
+  .menu a{
+    font-size: 3vw;
+  }
 
 }
