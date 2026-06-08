@@ -30,13 +30,13 @@ function Header() {
                     <a href="#">MOVIE.LAND</a>
                 </div>
                 <div className="search-sec">
-                    <div className="search-box">
+                    <div className="Search-input">
                         <input type="text" placeholder="Search" />
                         <button>GO</button>
                     </div>
                 </div>
                 <div className="menu">
-                    <ul className="lism">
+                    <ul className="list-items">
                         <li>
                             <a href="#">Home</a>
                         </li>
