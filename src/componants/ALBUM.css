@@ -157,17 +157,21 @@
 
 @media screen and (max-width: 444px) {
     
+    .albomwhole{
+        margin-top: 3%;
+    }
+
     .user-pf{
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .user-option{
-        aspect-ratio: 1.1;
+        aspect-ratio: 1;
     }
 
     .user-option button{
         font-size: 3vw;
-        aspect-ratio: 4;
+        aspect-ratio: 5;
     }
 
 }
