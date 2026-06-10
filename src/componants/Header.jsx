@@ -1,30 +1,39 @@
-import { useEffect } from "react";
+import { useRef } from "react";
 import './header.css';
 
 function Header() {
 
 
+    const ham = useRef(null);
 
-    useEffect(() => {
-        const ham = document.querySelector('.hamb');
-        const menio = document.querySelector('.menu');
-        let sw = false;
+    const head_exp = useRef(null);
 
-        const handler = () => {
-            sw = !sw;
-            ham.classList.toggle('active', sw === true);
-            menio.classList.toggle('active', sw === true);
-        };
+    const menu_height = useRef(null);
 
-        ham.addEventListener('click', handler);
+    let swc = false;
 
-        return () => ham.removeEventListener('click', handler);
-    }, []);
+    const header_expantion = () => {
 
+
+        if (menu_height.current && ham.current && head_exp.current) {
+
+            swc = !swc;
+
+            const menu_boundry = menu_height.current.getBoundingClientRect();
+
+            ham.current.style.tranform = swc ? `rotate(90deg)` : `rotate(0deg)`;
+
+            head_exp.current.style.height = swc ? `${120 + menu_boundry.height}px` : `120px`;
+
+
+        }
+
+
+    }
 
 
     return (
-        <header>
+        <header ref={head_exp}>
             <div className="nav">
                 <div className="logo">
                     <a href="#">MOVIE.LAND</a>
@@ -35,7 +44,7 @@ function Header() {
                         <button>GO</button>
                     </div>
                 </div>
-                <div className="menu">
+                <div className="menu" ref={menu_height}>
                     <ul className="list-items">
                         <li>
                             <a href="#">Home</a>
@@ -51,12 +60,12 @@ function Header() {
                         </li>
                     </ul>
                 </div>
-                <div className="hamb">
-                    <div>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+            </div>
+            <div className="hamb" ref={ham} onClick={header_expantion}>
+                <div className="hamb-container">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </header>
